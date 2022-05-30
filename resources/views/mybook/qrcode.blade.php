@@ -10,6 +10,6 @@
             {{ QrCode::size(300)->generate(DB::table('books')->select('id')->where('id', '2')->get()) }}
         </div>
     </div>
-<p>"test"</p>
+
 
 @endsection
