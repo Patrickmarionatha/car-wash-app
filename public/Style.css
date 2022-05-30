@@ -1,0 +1,71 @@
+.navbar {
+    background-color: #282424;
+}
+
+.navbar-brand {
+    color: gold;
+}
+
+.nav-link {
+    color: gold;
+}
+
+.kata {
+    text-align: end;
+    color: gold;
+    padding-bottom: 7vw;
+}
+
+.book {
+    text-align: center;
+    color: gold;
+    padding-top: 12vw;
+}
+
+.banner {
+    background: url(Assets/PIC2.jpg) no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    color: black;
+    background-color: gold;
+    position: absolute;
+    bottom: auto;
+    width: 100vw;
+}
+
+#footerAbout {
+    background-color: #282424;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.card {
+    max-width: 330px;
+}
+
+#behind {
+    background-color: #e2edff;
+}
