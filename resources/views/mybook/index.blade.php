@@ -10,10 +10,15 @@
             <thead>
                 <tr>
                     <th scope="col">Booking ID</th>
-                    <th scope="col">Station</th>
-                    <th scope="col">Service</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Car Type</th>
+                    <th scope="col">Car Brand</th>
+                    <th scope="col">Lisence Plate</th>
                     <th scope="col">Date</th>
                     <th scope="col">Time</th>
+                    <th scope="col">Station</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Payment</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -21,10 +26,15 @@
                 @foreach ($books as $book)
                     <tr>
                         <td>{{ $book->id }}</td>
-                        <td>{{ $book->bookstation }}</td>
-                        <td>{{ $book->bookservice }}</td>
+                        <td>{{ $book->name }}</td>
+                        <td>{{ $book->cartype }}</td>
+                        <td>{{ $book->carbrand }}</td>
+                        <td>{{ $book->lisenceplate }}</td>
                         <td>{{ $book->datepicker }}</td>
                         <td>{{ $book->booktime }}</td>
+                        <td>{{ $book->bookstation }}</td>
+                        <td>{{ $book->bookservice }}</td>
+                        <td>{{ $book->payment }}</td>
                         {{-- <td><a href="mybook/qrcode/{{ $book->id }}">Check QR</a></td> --}}
                         <td><a href="{{ route('qr.id', ['id'=>$book->id]) }}">Check QR</a></td>
                         {{-- <td><a href=" url('mybook/getDisplay/{id}' . $book->id) ">Check QR</a></td> --}}

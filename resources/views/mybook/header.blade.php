@@ -5,6 +5,7 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <h5 class="text-light">Welcome Back, {{ Auth::user()->username }}</h5>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
                 <form action="/logout" method="post">
