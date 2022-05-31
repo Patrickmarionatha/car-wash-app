@@ -34,7 +34,7 @@ Route::get('/book', [BookController::class, 'index'])->middleware('auth');
 Route::post('/book', [BookController::class, 'booking']);
 Route::resource('/mybook', MyBookController::class)->middleware('auth');
 
-Route::get('/mybook/qrcode/{id}', [QrCodeController::class, 'index'])->middleware('auth');
+Route::get('/mybook/qrcode/{id}', [QrCodeController::class, 'index'])->name('qr.id')->middleware('auth');
 
 Route::view("about", 'about', ["title" => "About"]);
 Route::view("service", 'service', ["title" => "Service"]);

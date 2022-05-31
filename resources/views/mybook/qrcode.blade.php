@@ -7,7 +7,7 @@
 
     <div class="card col-lg-auto">
         <div class="card-body">
-            {{ QrCode::size(300)->generate(DB::table('books')->select('id')->where('id', '2')->get()) }}
+            {{ QrCode::size(300)->generate(DB::table('books')->select('id')->where('id', $id)->get()) }}
         </div>
     </div>
 @endsection

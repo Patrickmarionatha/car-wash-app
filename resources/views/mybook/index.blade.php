@@ -25,7 +25,8 @@
                         <td>{{ $book->bookservice }}</td>
                         <td>{{ $book->datepicker }}</td>
                         <td>{{ $book->booktime }}</td>
-                        <td><a href="mybook/qrcode/{{ $book->id }}">Check QR</a></td>
+                        {{-- <td><a href="mybook/qrcode/{{ $book->id }}">Check QR</a></td> --}}
+                        <td><a href="{{ route('qr.id', ['id'=>$book->id]) }}">Check QR</a></td>
                         {{-- <td><a href=" url('mybook/getDisplay/{id}' . $book->id) ">Check QR</a></td> --}}
                     </tr>
                 @endforeach
