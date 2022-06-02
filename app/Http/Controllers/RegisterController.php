@@ -16,7 +16,7 @@ class RegisterController extends Controller
 
     public function create(Request $request)
     {
-        $validatedData = $request->validate(['role' => 'required',
+        $validatedData = $request->validate([
             'username' => 'required|min:5|max:255|unique:users',
             'password' => 'required|min:8|max:255',
             'confirm-password' => 'required|same:password',
