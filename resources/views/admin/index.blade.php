@@ -5,6 +5,55 @@
         <h1 class="h2">All Booking</h1>
     </div>
 
+    {{-- session accept --}}
+    @if(Session::has('accept'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ Session::get('accept') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+    {{-- session reject --}}
+    @if(Session::has('reject'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ Session::get('reject') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+    {{-- session done --}}
+    @if(Session::has('done'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ Session::get('done') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+    {{-- session cancel --}}
+    @if(Session::has('cancel'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ Session::get('cancel') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+    {{-- session delete --}}
+    @if(Session::has('delete'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ Session::get('delete') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
@@ -38,16 +87,51 @@
                         <td>{{ $book->payment }}</td>
                         <td>{{ $book->status }}</td>
                         <td>
-                            {{-- button accept --}}
-                            <form action="/admin/book/accept/{{ $book->id }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-success">Accept</button>
-                            </form>
-                            {{-- button reject --}}
-                            <form action="/admin/book/reject/{{ $book->id }}" method="post">
-                                @csrf
-                                <button type="submit" class="btn btn-danger">Reject</button>
-                            </form>
+                            @if ($book->status == 'pending')
+                                {{-- button accept --}}
+                                <form action="/admin/book/accept/{{ $book->id }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-success">Accept</button>
+                                </form>
+                                {{-- button reject --}}
+                                <form action="/admin/book/reject/{{ $book->id }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Reject</button>
+                                </form>
+                            @endif
+                            @if ($book->status == 'accept')
+                                {{-- button done --}}
+                                <form action="/admin/book/done/{{ $book->id }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-success">Done</button>
+                                </form>
+                                {{-- button cancel --}}
+                                <form action="/admin/book/cancel/{{ $book->id }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Cancel</button>
+                                </form>
+                            @endif
+                            @if ($book->status == 'done')
+                                {{-- button delete --}}
+                                <form action="/admin/book/delete/{{ $book->id }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            @endif
+                            @if ($book->status == 'cancel')
+                                {{-- button delete --}}
+                                <form action="/admin/book/delete/{{ $book->id }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            @endif
+                            @if ($book->status == 'reject')
+                                {{-- button delete --}}
+                                <form action="/admin/book/delete/{{ $book->id }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

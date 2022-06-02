@@ -38,9 +38,15 @@ Route::get('/admin/book/{id}/edit', [AdminController::class, 'edit'])->name('adm
 Route::post('/admin/book/{id}/edit', [AdminController::class, 'update'])->name('admin.book.update')->middleware('auth');
 Route::get('/admin/book/{id}/delete', [AdminController::class, 'delete'])->name('admin.book.delete')->middleware('auth');
 // Route admin accept
-Route::get('/admin/book/accept/{id}', [AdminController::class, 'accept'])->name('admin.accept')->middleware('auth');
+Route::post('/admin/book/accept/{id}', [AdminController::class, 'accept'])->name('admin.accept')->middleware('auth');
 // Route admin reject
-Route::get('/admin/book/reject/{id}', [AdminController::class, 'reject'])->name('admin.reject')->middleware('auth');
+Route::post('/admin/book/reject/{id}', [AdminController::class, 'reject'])->name('admin.reject')->middleware('auth');
+// Route admin done
+Route::post('/admin/book/done/{id}', [AdminController::class, 'done'])->name('admin.done')->middleware('auth');
+// Route admin delete
+Route::post('/admin/book/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete')->middleware('auth');
+// Route admin cancel
+Route::post('/admin/book/cancel/{id}', [AdminController::class, 'cancel'])->name('admin.cancel')->middleware('auth');
 
 //route register
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');

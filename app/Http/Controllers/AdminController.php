@@ -14,6 +14,10 @@ class AdminController extends Controller
      */
     public function index()
     {
+        // check if user admin
+        if (auth()->user()->role != 'admin') {
+            return redirect('/');
+        }
         return view('admin.index', [
             'title' => 'Admin',
             // ascending order
@@ -26,7 +30,9 @@ class AdminController extends Controller
         $book = Book::find($id);
         $book->status = 'accept';
         $book->save();
-        return redirect()->route('admin.book');
+        //flash message accept
+        session()->flash('accept', 'Booking Accepted!');
+        return redirect()->route('admin');
     }
 
     public function reject($id)
@@ -34,7 +40,38 @@ class AdminController extends Controller
         $book = Book::find($id);
         $book->status = 'reject';
         $book->save();
-        return redirect()->route('admin.book');
+        //flash message reject
+        session()->flash('reject', 'Booking Rejected!');
+        return redirect()->route('admin');
+    }
+
+    public function delete($id)
+    {
+        $book = Book::find($id);
+        $book->delete();
+        //flash message delete
+        session()->flash('delete', 'Booking Deleted!');
+        return redirect()->route('admin');
+    }
+
+    public function done($id)
+    {
+        $book = Book::find($id);
+        $book->status = 'done';
+        $book->save();
+        //flash message done
+        session()->flash('done', 'Booking Done!');
+        return redirect()->route('admin');
+    }
+
+    public function cancel($id)
+    {
+        $book = Book::find($id);
+        $book->status = 'cancel';
+        $book->save();
+        //flash message cancel
+        session()->flash('cancel', 'Booking Canceled!');
+        return redirect()->route('admin');
     }
 
     /**
