@@ -19,6 +19,7 @@
                     <th scope="col">Station</th>
                     <th scope="col">Service</th>
                     <th scope="col">Payment</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -35,9 +36,8 @@
                         <td>{{ $book->bookstation }}</td>
                         <td>{{ $book->bookservice }}</td>
                         <td>{{ $book->payment }}</td>
-                        {{-- <td><a href="mybook/qrcode/{{ $book->id }}">Check QR</a></td> --}}
+                        <td>{{ $book->status }}</td>
                         <td><a href="{{ route('qr.id', ['id'=>$book->id]) }}">Check QR</a></td>
-                        {{-- <td><a href=" url('mybook/getDisplay/{id}' . $book->id) ">Check QR</a></td> --}}
                     </tr>
                 @endforeach
             </tbody>
