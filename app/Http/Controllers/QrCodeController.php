@@ -20,6 +20,7 @@ class QrCodeController extends Controller
 
     public function code(Request $request)
     {
+        //test
         Qrcode::create($request);
     }
 }
