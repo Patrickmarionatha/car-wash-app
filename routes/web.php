@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MyBookController;
 use App\Http\Controllers\QrCodeController;
@@ -23,13 +24,25 @@ Route::get('/', function () {
         "title" => "Home"
     ]);
 });
+//route login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+//route admin
+Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('auth');
+Route::get('/admin/book', [AdminController::class, 'book'])->name('admin.book')->middleware('auth');
+Route::get('/admin/book/create', [AdminController::class, 'create'])->name('admin.book.create')->middleware('auth');
+Route::post('/admin/book/create', [AdminController::class, 'store'])->name('admin.book.store')->middleware('auth');
+Route::get('/admin/book/{id}/edit', [AdminController::class, 'edit'])->name('admin.book.edit')->middleware('auth');
+Route::post('/admin/book/{id}/edit', [AdminController::class, 'update'])->name('admin.book.update')->middleware('auth');
+Route::get('/admin/book/{id}/delete', [AdminController::class, 'delete'])->name('admin.book.delete')->middleware('auth');
+
+//route register
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'create']);
 
+//route book
 Route::get('/book', [BookController::class, 'index'])->middleware('auth');
 Route::post('/book', [BookController::class, 'booking']);
 Route::resource('/mybook', MyBookController::class)->middleware('auth');
