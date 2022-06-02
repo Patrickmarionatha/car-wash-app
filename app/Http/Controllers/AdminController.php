@@ -21,6 +21,22 @@ class AdminController extends Controller
         ]);
     }
 
+    public function accept($id)
+    {
+        $book = Book::find($id);
+        $book->status = 'accept';
+        $book->save();
+        return redirect()->route('admin.book');
+    }
+
+    public function reject($id)
+    {
+        $book = Book::find($id);
+        $book->status = 'reject';
+        $book->save();
+        return redirect()->route('admin.book');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

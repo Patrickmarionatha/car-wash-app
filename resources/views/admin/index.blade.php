@@ -36,7 +36,18 @@
                         <td>{{ $book->bookservice }}</td>
                         <td>{{ $book->payment }}</td>
                         {{-- <td><a href="mybook/qrcode/{{ $book->id }}">Check QR</a></td> --}}
-                        <td><a href="{{ route('qr.id', ['id'=>$book->id]) }}">Check QR</a></td>
+                        <td>
+                            {{-- button accept --}}
+                            <form action="/admin/book/accept/{{ $book->id }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-success">Accept</button>
+                            </form>
+                            {{-- button reject --}}
+                            <form action="/admin/book/reject/{{ $book->id }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-danger">Reject</button>
+                            </form>
+                        </td>
                         {{-- <td><a href=" url('mybook/getDisplay/{id}' . $book->id) ">Check QR</a></td> --}}
                     </tr>
                 @endforeach
