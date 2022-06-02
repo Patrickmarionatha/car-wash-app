@@ -47,6 +47,8 @@ Route::post('/admin/book/done/{id}', [AdminController::class, 'done'])->name('ad
 Route::post('/admin/book/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete')->middleware('auth');
 // Route admin cancel
 Route::post('/admin/book/cancel/{id}', [AdminController::class, 'cancel'])->name('admin.cancel')->middleware('auth');
+// Route admin search
+Route::get('/admin/book/search', [AdminController::class, 'search'])->name('admin.search')->middleware('auth');
 
 //route register
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');

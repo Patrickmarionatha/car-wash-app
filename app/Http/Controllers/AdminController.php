@@ -74,6 +74,17 @@ class AdminController extends Controller
         return redirect()->route('admin');
     }
 
+    // search
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $books = Book::where('id', 'like', '%' . $request->id . '%')->get();
+        return view('admin.search', [
+            'title' => 'Admin',
+            'books' => $books
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
