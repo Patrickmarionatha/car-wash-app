@@ -37,7 +37,32 @@
                         <td>{{ $book->bookservice }}</td>
                         <td>{{ $book->payment }}</td>
                         <td>{{ $book->status }}</td>
-                        <td><a href="{{ route('qr.id', ['id'=>$book->id]) }}">Check QR</a></td>
+                        <td class="col-lg-2">
+                            @if ($book->status == 'accept')
+                            {{-- <a href="{{ route('qr.id', ['id'=>$book->id]) }}">Check QR</a> --}}
+                                {{-- button qr --}}
+                                <form action="{{ route('qr.id', ['id'=>$book->id]) }}" method="get">
+                                    <button type="submit" class="btn btn-info mb-1">Check QR</button>
+                                </form>
+                                {{-- button cancel --}}
+                                <form action="/admin/book/cancel/{{ $book->id }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Cancel</button>
+                                </form>
+                            @endif
+                            @if ($book->status == 'reject')
+                                <form action="/book">
+                                    <button type="submit" class="btn btn-warning">Book Again Because The Station already Booked!</button>
+                                </form>
+                            @endif
+                            @if ($book->status == 'pending')
+                                {{-- button cancel --}}
+                                <form action="/admin/book/cancel/{{ $book->id }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger">Cancel</button>
+                                </form>
+                            @endif
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

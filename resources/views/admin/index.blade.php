@@ -15,7 +15,7 @@
                             <input type="text" class="form-control" name="id" placeholder="Search by ID">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="submit">
-                                    <i class="fa fa-search"></i>
+                                    <i class="fa fa-search">search</i>
                                 </button>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                 {{-- button accept --}}
                                 <form action="/admin/book/accept/{{ $book->id }}" method="post">
                                     @csrf
-                                    <button type="submit" class="btn btn-success">Accept</button>
+                                    <button type="submit" class="btn btn-success mb-1">Accept</button>
                                 </form>
                                 {{-- button reject --}}
                                 <form action="/admin/book/reject/{{ $book->id }}" method="post">
@@ -122,7 +122,7 @@
                                 {{-- button done --}}
                                 <form action="/admin/book/done/{{ $book->id }}" method="post">
                                     @csrf
-                                    <button type="submit" class="btn btn-success">Done</button>
+                                    <button type="submit" class="btn btn-success mb-1">Done</button>
                                 </form>
                                 {{-- button cancel --}}
                                 <form action="/admin/book/cancel/{{ $book->id }}" method="post">
