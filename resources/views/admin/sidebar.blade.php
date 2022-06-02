@@ -2,7 +2,7 @@
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('mybook') ? 'active' : '' }}" aria-current="page" href="/mybook">
+                <a class="nav-link {{ Request::is('admin') ? 'active' : '' }}" aria-current="page" href="/admin">
                     <span data-feather="home" class="align-text-bottom"></span>
                     All Booking
                 </a>
