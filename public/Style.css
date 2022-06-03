@@ -32,7 +32,7 @@ footer {
     text-align: center;
     color: black;
     background-color: gold;
-    position: fixed;
+    position: relative;
     bottom: 0%;
     width: 100vw;
 }
