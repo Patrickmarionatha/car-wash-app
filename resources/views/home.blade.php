@@ -23,7 +23,7 @@
             <!-- akhir Booking -->
         </div>
         <!-- Footer -->
-        <footer>
+        <footer class="position-absolute bottom-0">
             <p>
                 Best car wash app on the planet<br>
                 this website will make the customer easily book a car wash on their nearest location
