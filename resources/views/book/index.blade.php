@@ -14,11 +14,35 @@
                 @csrf
                 <div class="row mb-1 pt-lg-5 text-light text-bold">
                     <label for="name" class="col-sm-2 col-form-label bg-dark rounded-1">Name</label>
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Input your Name">
                     </div>
+                    <label for="cartype" class="col-sm-2 col-form-label bg-dark rounded-1">Car Type</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" name="cartype" id="cartype"
+                            placeholder="Input your Car Type">
+                    </div>
+                </div>
+                <div class="row mb-1 pt-lg-5 text-light text-bold">
+                    <label for="carbrand" class="col-sm-2 col-form-label bg-dark rounded-1">Car Brand</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" name="carbrand" id="carbrand"
+                            placeholder="Input your Car Brand">
+                    </div>
+                    <label for="lisenceplate" class="col-sm-2 col-form-label bg-dark rounded-1">Lisence Plate</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" name="lisenceplate" id="lisenceplate"
+                            placeholder="Input your Lisence Plate">
+                    </div>
+                </div>
+                <div class="row mb-1 pt-lg-5 text-light text-bold">
+                    <label for="datepicker" class="col-sm-2 col-form-label bg-dark rounded-1">Select Date</label>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" name="datepicker" id="datepicker"
+                            placeholder="Select Date">
+                    </div>
                     <label for="booktime" class="col-sm-2 col-form-label bg-dark rounded-1">Select Time</label>
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <select class="form-select" name="booktime" id="booktime">
                             <option selected disabled>Select Time Booking</option>
                             <option value="09:00">09:00</option>
@@ -44,13 +68,8 @@
                     </div>
                 </div>
                 <div class="row mb-1 pt-lg-5 text-light text-bold">
-                    <label for="cartype" class="col-sm-2 col-form-label bg-dark rounded-1">Car Type</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" name="cartype" id="cartype"
-                            placeholder="Input your Car Type">
-                    </div>
                     <label for="bookstation" class="col-sm-2 col-form-label bg-dark rounded-1">Station</label>
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <select class="form-select" name="bookstation" id="bookstation">
                             <option selected disabled>Select Station</option>
                             <option value="Station 1">Station 1</option>
@@ -59,15 +78,8 @@
                             <option value="Station 4">Station 4</option>
                         </select>
                     </div>
-                </div>
-                <div class="row mb-1 pt-lg-5 text-light text-bold">
-                    <label for="carbrand" class="col-sm-2 col-form-label bg-dark rounded-1">Car Brand</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" name="carbrand" id="carbrand"
-                            placeholder="Input your Car Brand">
-                    </div>
                     <label for="bookservice" class="col-sm-2 col-form-label bg-dark rounded-1">Service Type</label>
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <select class="form-select" name="bookservice" id="servicetype">
                             <option selected disabled>Select Service Type</option>
                             <option value="Cleaning">Cleaning</option>
@@ -77,13 +89,8 @@
                     </div>
                 </div>
                 <div class="row mb-1 pt-lg-5 text-light text-bold">
-                    <label for="lisenceplate" class="col-sm-2 col-form-label bg-dark rounded-1">Lisence Plate</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" name="lisenceplate" id="lisenceplate"
-                            placeholder="Input your Lisence Plate">
-                    </div>
                     <label for="payment" class="col-sm-2 col-form-label bg-dark rounded-1">Payment</label>
-                    <div class="col-sm-4">
+                    <div class="col-lg-4">
                         <select class="form-select" name="payment" id="payment">
                             <option selected disabled>Choose The Payment</option>
                             <option value="Ovo">Ovo</option>
@@ -93,13 +100,6 @@
                             <option value="Transfer">Transfer</option>
                             <option value="Cash">Cash</option>
                         </select>
-                    </div>
-                </div>
-                <div class="row mb-1 pt-lg-5 text-light text-bold">
-                    <label for="datepicker" class="col-sm-2 col-form-label bg-dark rounded-1">Select Date</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" name="datepicker" id="datepicker"
-                            placeholder="Select Date">
                     </div>
                 </div>
                 <div class="row mb-1 pt-lg-5 text-light text-bold justify-content-end">
