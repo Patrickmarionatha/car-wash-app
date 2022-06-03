@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <form action="{{ route('admin.search') }}" method="GET">
                         <div class="input-group">
-                            <input type="text" class="form-control" name="id" placeholder="Search by ID">
+                            <input type="text" class="form-control" name="id" placeholder="Search by ID" autofocus>
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary" type="submit">
                                     <i class="fa fa-search">search</i>
