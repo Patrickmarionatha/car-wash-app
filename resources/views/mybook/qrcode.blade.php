@@ -10,7 +10,7 @@
                 QR Code Book {{ $id }}
             </div>
             <div class="card-body justify-content-center">
-                {{ QrCode::size(270)->generate(DB::table('books')->select('id')->where('id', $id)->get()) }}
+                {{ QrCode::size(270)->generate($id) }}
             </div>
         </div>
     </div>
